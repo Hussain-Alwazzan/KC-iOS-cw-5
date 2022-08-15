@@ -25,14 +25,20 @@ struct ContentView: View {
                 HStack{
                    Spacer()
                     Button{grocerryitems.append(newitems); }label:{ Image(systemName: "plus")}
-                    
+                        .frame(width: 60, height: 60)
+                        .foregroundColor(.white)
+                        .background(.green)
+                        .cornerRadius(15)
                     Spacer()
-                    Text("add items")
+                    TextField("New Items", text: $newitems )
   
                     Spacer()
                     
-                    Button{grocerryitems.append(newitems); }label:{ Image(systemName: "minus")}
-
+                    Button{grocerryitems.remove(at: 0); }label:{ Image(systemName: "minus")}
+                        .frame(width: 60, height: 60)
+                        .foregroundColor(.white)
+                        .background(.red.opacity(0.89))
+                        .cornerRadius(15)
                     Spacer()
                 }
         
